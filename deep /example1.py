@@ -3,7 +3,7 @@ import os
 import tensorflow as tf
 import numpy as np
 from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import StnadardScaler
+from sklearn.preprocessing import StandardScaler
 
 #Load Data and review content
 iris_data = pd.read_csv("iris.csv")
@@ -28,3 +28,4 @@ print("\nFeatures before scaling : \n--------------------")
 print(X_data[:5,:])
 print("\nTarget before scaling :\n---------------------")
 print(Y_data[:5])
+
