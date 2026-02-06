@@ -27,3 +27,27 @@ model.compile(loss= 'categorical_crossentropy',
 
 #Print the model meta-data
 model.summary()
+
+
+#Make it verbose so we can see the progress
+VERBOSE = 1
+
+#Setup Hyper Parameters for training
+
+#Set Batch size
+BATCH_SIZE=16
+#Set number of epochs
+EPOCHS=10
+#Set validation split. 20% of the training data will be used for validation
+#after each epoch
+VALIDATION_SPLIT=0.2
+
+print("\nTraining Progress:\n--------------------------")
+
+#Fit the model. This will perform the entire training cycle, including
+#forward propagation, loss computation, backward propagation and gradient descent.
+#execute for the specified batch sizes and epoch
+#Perform validation after each epoch
+
+
+    
