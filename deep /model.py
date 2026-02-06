@@ -66,4 +66,29 @@ plt show()
 print("\nEvaluation against Test Dataset :\n----------------------")
 model.evaluate(X_test,Y_test)
 
+#Saving a model
+model.save("iris_save")
+
+#Loading a Model
+loaded_model = keras.models.load_model("iris_save")
+
+#Print model summary
+loaded_model.summary()
+
+#Raw prediction data
+prediction_input = ([6.6, 3. , 4.4, 1.4])
+
+#Scale prediction data with the same scaling model
+scaled_input = scaler.transform(prediction_input)
+
+#Get raw prediction probalilites
+raw_prediction = model.predict(scaled_input)
+print("Raw predictio output (probailities) :" , raw_prediction)
+
+#Find prediction
+prediction = np.argmax(raw_prediction)
+print("Prediction is", label_encode.inverse_transform([prediction]))
+
+
+
     
