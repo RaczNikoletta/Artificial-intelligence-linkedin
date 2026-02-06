@@ -17,3 +17,13 @@ model.add(keras.layes.Dense(128,
                             activation='relu'))
 
 #Add an output layer with softmax activation
+model.add(keras.layers.Dense(NB_CLASSES,
+                             name='Output_Layer',
+                             activation='softmax'))
+
+#Compile the model with loss and metrics
+model.compile(loss= 'categorical_crossentropy',
+              metrics=['accuracy'])
+
+#Print the model meta-data
+model.summary()
