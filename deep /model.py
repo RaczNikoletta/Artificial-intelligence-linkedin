@@ -48,6 +48,22 @@ print("\nTraining Progress:\n--------------------------")
 #forward propagation, loss computation, backward propagation and gradient descent.
 #execute for the specified batch sizes and epoch
 #Perform validation after each epoch
+history=model.fit(X_train,
+                  Y_train,
+                  batch_size=BATCH_SIZE,
+                  epochs=EPOCHS,
+                  verbose=VERBOSE,
+                  validation_split=VALIDATION_SPLIT)
+print("\nAccuaracy during Training :\n-----------------------")
+import matplotlib.pyplot as plt
 
+#Plot accuracy of the model after each epoch.
+pd.DataFrame(hisory)["accuracy"].plot(figsize=(8, 5))
+plt.title("Accuracy improvements with epoch")
+plt show()
+
+#Evaluate the model against the test dataset and print results
+print("\nEvaluation against Test Dataset :\n----------------------")
+model.evaluate(X_test,Y_test)
 
     
